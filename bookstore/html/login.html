@@ -1,0 +1,19 @@
+<body>
+<h1 style="text-align: center; font-family: 'Roboto'">Login</h1>
+<div class="container">
+    <form class="was-validated" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <div>
+            <label for="username">Username: </label> <br>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username" required><br>
+            <label for="pass">Password: </label><br>
+            <input type="password" id="pass" name="pass" class="form-control" placeholder="Enter Password" required><br><br>
+            <?php echo $usernameError ?><br>
+            <input type="submit" value="Login"><br><br>
+            <a href="register.php" >Register</a><br><br>
+            <a href="forgotPassword.php" >Forgot Password</a>
+        </div>
+    </form>
+</div>
+<br><br>
+</body>
+</html>

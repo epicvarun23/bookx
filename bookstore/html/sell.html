@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload</title>
+</head>
+<body>
+<h1 style="text-align: center">Sell Book:</h1>
+<form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype="multipart/form-data" class="was-validated" data-toggle="validator">
+    <div class="container">
+        <div class="form-group">
+            <label for="bookTitle">Book Title: </label>
+            <input type="text" maxlength="50" name="bookTitle" id="bookTitle" class="form-control"
+                   value="<?php echo $bookTitle; ?>" placeholder="Enter Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="bookPic">Upload Picture:</label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" name="bookPic" id="bookPic" onchange="return fileValidation()" accept=".jpg,.png,.gif,.jpeg" >
+                <label class="custom-file-label" for="bookPic">Choose file</label>
+                <script>
+                    // Add the following code if you want the name of the file appear on select
+                    $(".custom-file-input").on("change", function () {
+                        var fileName = $(this).val().split("\\").pop();
+                        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                    });
+                </script>
+
+                <script>
+                    function fileValidation() {
+                        const fi = document.getElementById('bookPic');
+                        // Check if any file is selected.
+                        if (fi.files.length > 0) {
+                            for (const i = 0; i <= fi.files.length - 1; i++) {
+
+                                const fsize = fi.files.item(i).size;
+                                const file = Math.round((fsize / 1024));
+                                // The size of the file.
+                                if (file >= 409600) {
+                                    alert(
+                                        "File too Big, please select a file less than 4mb");
+                                } else {
+                                    document.getElementById('size').innerHTML = '<b>'
+                                        + file + '</b> KB';
+                                }
+                            }
+                                var fileInput =
+                            document.getElementById('bookPic');
+
+                        var filePath = fileInput.value;
+
+                        // Allowing file type
+                        var allowedExtensions =
+                            /(\.png|\.gif|\.jpeg|\.jpg)$/i;
+
+                        if (!allowedExtensions.exec(filePath)) {
+                            alert('Invalid file type');
+                            fileInput.value = '';
+                            return false;
+                        }
+                    }
+                }
+              </script>
+            </div>
+        </div>
+        <p class="registerError"><?php echo $error; ?></p>
+        <div class="form-group">
+            <label for="subjects">Select Book Subject:</label> <br>
+            <select name="subjects" id="subjects" placeholder="Select Subject"value="<?php echo $bookSubject?>"class="custom-select">
+                <option value="select"> -- select a subject -- </option>
+                <option value="AP">AP</option>
+                <option value="SAT">SAT</option>
+                <option value="ACT">ACT</option>
+                <option value="OTHER">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="publishers">Select Book Publisher:</label> <br>
+            <select name="publishers" id="publishers" placeholder="Select Subject"value="<?php echo $bookPublisher?>"class="custom-select">
+                <option value="select"> -- select a Publisher -- </option>
+                <option value="Barron">Barron's</option>
+                <option value="PrincetonReview">Princeton Review</option>
+                <option value="Kaplan">Kaplan</option>
+                <option value="OTHER">Other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="year">Publication Year</label>
+            <input type="number" maxlength="4" max="2021" class="form-control" placeholder="Enter Publication Year" name="year"
+                  value="<?php echo $year;?>" required id="year">
+        </div>
+        <div class="form-group">
+            <input type="radio" id="sellRadio" value="0" name="sellType" onchange="updateSellType()" checked>
+            <label for="sellRadio">Sell</label><br>
+
+            <input type="radio" id="donateRadio" value="1" name="sellType" onchange="updateSellType()">
+            <label for="donateRadio">Donate</label>
+        </div>
+         <div class="form-group">
+            <label for="price" id="priceLabel">Price</label>
+            <input type="number" max="100" step="0.01" class="form-control" placeholder="Enter Price" name="price"
+                  value="<?php echo $price;?>" required id="price">
+        </div>
+
+        <script>
+            function updateSellType(){
+                var priceInput = document.getElementById("price");
+                var priceLabel = document.getElementById("priceLabel");
+                var sellRadioValue = document.getElementsByName("sellType");
+                if (sellRadioValue[0].checked==true) {
+                    priceInput.style.display = "block";
+                    priceLabel.style.display = "block";
+                } else {
+                    priceInput.style.display = "none";
+                    priceLabel.style.display = "none";
+                    priceInput.value = 0;
+                }
+            }
+        </script>
+
+        <div class="form-group">
+            <label for="condition">Select Book Condition:</label> <br>
+            <select name="condition" id="condition" placeholder="Select Condition"value="<?php echo $bookCondition?>"class="custom-select">
+                <option value="New">New</option>
+                <option value="Slightly Used">Slightly Used</option>
+                <option value="Used">Used</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit">
+        </div>
+    </div>
+</form>
+</body>
+</html>

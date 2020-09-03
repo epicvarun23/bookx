@@ -1,0 +1,137 @@
+@media screen and (min-width: 900px) {
+    .smallScreen {
+        display: none;
+    }
+    p{
+        margin-bottom: 0em;
+    }
+    .displayTable{
+        width: 90%;
+        align-content: center;
+        border-collapse: collapse;
+        border: none;
+    }
+    .displayTableData{
+        padding-left: 10px;
+        border: none;
+        vertical-align: top;
+        overflow:hidden;
+    }
+    
+    .displayTableImage{
+       padding-left: 20px;
+       width: 150px;
+       height: 200px;
+       border: none;
+       overflow:hidden;
+    }
+    
+    .filterForm{
+        padding: 15px;
+    }
+    
+    .filter{
+        border-top: none;
+         border-left: none; 
+         border-bottom: none; 
+         border-right-color: lightgray;
+         width: 20%;
+         vertical-align: top;
+         overflow:hidden;
+    }
+
+    .pagination{
+        padding-left: 20%;
+    }
+    
+    .rangeTextOutput{
+        border: none;
+        width: 25%;
+        vertical-align: top;
+    }
+    .soldRemover{
+        width: 20%;
+    }
+    
+    .homeTableButton{
+        vertical-align: bottom;
+    }
+    
+    .bookTitleHomePage{
+        font-size: 35px;
+    }
+    
+    .priceHomePage{
+        font-size: 25px;
+        color: #007BFF;
+    }
+    .filterFormSmall{
+        display: none;
+    }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    display: inline;
+}
+
+.header{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-bottom: 0;
+    background-color: lightblue;
+}
+
+
+.navigationBar{
+    display: block;
+    text-align: left;
+    overflow: hidden;
+    font-size: 20px;
+    font-family: Roboto;
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navigationText a{
+    color: black;
+    text-decoration: none;
+    padding-left: 75px;
+    padding-right: 75px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navigationText a:hover{
+    background-color: aliceblue;
+    margin: 0px;
+}
+.navigationText a:active{
+    background-color: skyblue;
+}
+
+#dropdownMenuButton {
+    float: right;
+}
+.registerError{
+    color: red;
+    text-align: center;
+    width: 100%;
+}
+.pagination{
+    padding-left: 15px;
+}
+.titleText{
+    font-size: 25px;
+}
+
+hr{
+    color: gray;
+}
+

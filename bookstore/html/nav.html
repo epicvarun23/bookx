@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="css/largeScreen.css">
+    <link rel="stylesheet" href="css/smallScreen.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+<nav>
+    <div class="largeScreen">
+        <ul class="navigationBar largeScreen">
+            <li class="navigationText"><a href="home.php">Home</a></li>
+            <li class="navigationText"><a href="about.php">About</a></li>
+            <li class="navigationText"><a href="sell.php">Sell</a></li>
+            <?php
+                echo $html_code;
+            ?>
+        </ul>  
+    </div>
+    <div class="dropdown show smallScreen">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?php 
+            echo $menuText;
+          ?>
+        </a>
+        <?php echo $bookNameMiddle;?>
+            
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="home.php">Home</a>
+            <a class="dropdown-item" href="about.php">About</a>
+            <a class="dropdown-item" href="sell.php">Sell</a>
+            <?php
+                echo $html_code_small_screen;
+            ?>            
+        </div>
+        
+      </div>
+      
+</nav>
+</body>
+</html>

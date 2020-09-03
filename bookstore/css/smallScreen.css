@@ -1,0 +1,114 @@
+@media screen and (max-width: 900px) {
+    .largeScreen {
+        display: none;
+    }
+    p{
+        margin-bottom: 0em;
+        word-break: break-word;
+    }
+    .displayTable{
+        width: 100%;
+        align-content: center;
+        border-collapse: collapse;
+        border: none;
+        background-color: w;
+    }
+    .displayTableData{
+        padding-left: 10px;
+        border: none;
+        vertical-align: top;
+        overflow:hidden;
+        background-color: white;
+
+    }
+
+    .displayTableImage{
+    padding-left: 10px;
+    width: 75px;
+    border: none;
+    overflow:hidden;
+    background-color: white;
+    }
+
+    .filterForm{
+        padding: 15px;
+    }
+    .header{
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-bottom: 0;
+        background-color: lightblue;
+        float: initial;
+    }
+    .filter{
+        border-top: none;
+        border-left: none; 
+        border-bottom: none; 
+        border-right-color: lightgray;
+        width: 20%;
+        vertical-align: top;
+        overflow:hidden;
+    }
+
+    .rangeTextOutput{
+        border: none;
+        width: 25%;
+        vertical-align: top;
+    }
+    .soldRemover{
+        width: 20%;
+    }
+
+    .homeTableButton{
+        vertical-align: bottom;
+    }
+
+    .bookTitleHomePage{
+        font-size: 20px;
+    }
+
+    .priceHomePage{
+        font-size: 15px;
+    }
+    .paginationNumbers{
+        margin-left: 10px;
+    }
+    .file-control {
+        white-space:nowrap; overflow:hidden;
+    }
+    .content {
+        overflow: hidden;
+        padding-left: 10px;
+        padding-right: 10px;
+       }
+    
+}
+
+td {
+    border: 2px solid black;
+    padding: 0;
+    margin: 0px;
+    overflow: scroll;
+    background-color: white;
+  }
+
+  .custom-file-label {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    /* new lines */
+    width: 100%;
+    position: absolute;
+    left: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.filterFormSmall{
+    float: right;
+    padding-right: 15px;
+}
+
+

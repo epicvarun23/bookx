@@ -1,0 +1,21 @@
+<body>
+<h1 style="text-align: center">Register</h1>
+<div class="container">
+    <form class="was-validated" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <label for="fname" >First Name: </label> <br>
+        <input type="text" id="fname" name="fname" class="form-control" placeholder="Enter First Name" value="<?php echo $fname?>" required><br>
+        <label for="lname" >Last Name: </label> <br>
+        <input type="text" id="lname" name="lname" class="form-control" placeholder="Enter Last Name" value="<?php echo $lname?>"required><br>
+        <label for="email" >Email: (format:xxx@domain.com)</label> <br>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"value="<?php echo $electronicMailAddress?>" required><br>
+        <label for="username">Username: </label> <br>
+        <input type="text" id="username" name="username" class="form-control" placeholder="Enter Username"value="<?php echo $websiteNameOfUser?>" required><br>
+        <label for="pass">Password: </label><br>
+        <input type="password" id="pass" name="pass" class="form-control" placeholder="Enter Password" required><br>
+        <label for="confirmPass">Confirm Password: </label><br>
+        <input type="password" id="confirmPass" name="confirmPass" class="form-control" placeholder="Confirm Password" required><br><br>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>

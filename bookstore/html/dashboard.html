@@ -1,0 +1,74 @@
+<body>
+    <h2 style="text-align: center;">
+        Your Books
+    </h2>
+    <table class="displayTable">
+        <tr>
+            <td class="filter">
+                <h4 style="text-align: center;">
+                    Filter
+                </h4>
+                <vl>
+                <form class="filterForm" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                    <div class="form-group">
+                        <label for="book_name">Book Title: </label>
+                        <input type="text" value="<?php echo $book_title;?>" maxlength="50" name="book_name" id="book_name" class="form-control" placeholder="Enter Title">
+                    </div>
+                    <div class="form-group">
+                    <label for="book_subject">Select Subject</label>
+                    <select name="book_subject" id="book_subject" placeholder="Select Subject">
+                        <option value="selectSubject">Select Subject</option>
+                       <?php
+                        echo $ap_option;
+                        echo $sat_option;
+                        echo $act_option;
+                        echo $other_option;
+                       ?>
+                    </select><br><br>
+                    </div>
+                    <div class="form-group">
+                        <script>
+                            var dollar = "$";
+                            function updateMinTextInput(val) {
+                                document.getElementById('minTextInput').value=dollar.concat(val); 
+                            }
+    
+                            function updateMinRangeInput(val){
+                                document.getElementById('min').value=val;
+                                
+                            }
+    
+                            function updateMaxTextInput(val) {
+                                document.getElementById('maxTextInput').value=dollar.concat(val);; 
+                            }
+    
+                            function updateMaxRangeInput(val){
+                                document.getElementById('max').value=val;
+                            }
+                        </script>
+                    <label for="min">Minimum Price:</label><br>
+                    <input type="range" id="min" name="minimum_price" min="0" max="100" value="<?php echo $minimum_price;?>" onchange="updateMinTextInput(this.value);">
+                    <input type="text" id="minTextInput" class="rangeTextOutput" value="$<?php echo $minimum_price;?>"><br>
+                    <label for="max">Maximum Price:</label><br>
+                    <input type="range" id="max" min="0" max="100" name="maximum_price" value="<?php echo $maximum_price;?>" onchange="updateMaxTextInput(this.value);">
+                    <input type="text" id="maxTextInput" class="rangeTextOutput" value="$<?php echo $maximum_price;?>"><br><br>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </form>
+                </vl>
+            </td>
+            <td class="displayTableData">
+                <table class="displayTable displayTableData">
+                    <div class="vl"></div>
+                    <?php echo $table_output?> 
+                </table>
+            </td>
+        </tr>
+        <ul class="pagination">
+            <?php echo $pagLink; ?>
+        </ul> 
+    </table>
+    </body>
+    </html>
